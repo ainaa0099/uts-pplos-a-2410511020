@@ -12,9 +12,11 @@ app.use((req, res, next) => {
 });
 
 // routes
-const anggotaRoutes = require('./routes/anggotaRoutes');
+const anggotaRoutes      = require('./routes/anggotaRoutes');
+const kartuAnggotaRoutes = require('./routes/kartuAnggotaRoutes');
 
 app.use(anggotaRoutes);
+app.use(kartuAnggotaRoutes);
 
 // jalankan server
 app.listen(port, () => {
