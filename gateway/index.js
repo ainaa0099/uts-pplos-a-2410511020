@@ -61,12 +61,14 @@ app.use(verifyToken);
 // logger
 app.use((req, res, next) => {
     console.log(`[${new Date().toLocaleString()}] ${req.method} ${req.path}`);
+    console.log(`path: ${req.path}`);
+    console.log(`url: ${req.url}`);
     next();
 });
 
 // routing ke masing-masing service
 app.use('/api/auth', createProxyMiddleware({
-    target:      process.env.AUTH_SERVICE_URL,
+    target:       process.env.AUTH_SERVICE_URL,
     changeOrigin: true,
 }));
 
