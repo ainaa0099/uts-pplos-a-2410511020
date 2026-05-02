@@ -1,0 +1,1183 @@
+{
+  "info": {
+    "_postman_id": "f702f1d2-4e9e-4fb4-b136-1e247e552f46",
+    "name": "UTS Perpustakaan Digital",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52792919",
+    "_collection_link": "https://go.postman.co/collection/52792919-f702f1d2-4e9e-4fb4-b136-1e247e552f46?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth Service",
+      "item": [
+        {
+          "name": "refresh-token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzc3NzIwNDU0LCJleHAiOjE3NzgzMjUyNTR9.pc3xZZR9Fos24HLkI8o80F2oOvBmNXI7xr0WCQtugPw\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/refresh-token",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nama\": \"Aina Annisa\",\r\n    \"email\": \"aina@test.com\",\r\n    \"password\": \"qwerty\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"aina@test.com\",\r\n    \"password\": \"qwerty\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjA2MjcsImV4cCI6MTc3NzcyMTUyN30.fY6BEu_d0Vl7hf9yn7ikdqff12oUxgtuFMxwMeCvXqk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzc3NzIwNjI3LCJleHAiOjE3NzgzMjU0Mjd9.0hpN0kbBhoiEChz4340AtOGlceWb4IvSe1GuHAobwgg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/logout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login google",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/auth/google",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "google"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Member Service",
+      "item": [
+        {
+          "name": "kategori by ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjA2MjcsImV4cCI6MTc3NzcyMTUyN30.fY6BEu_d0Vl7hf9yn7ikdqff12oUxgtuFMxwMeCvXqk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/kategori/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "kategori",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all kategori",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjA2MjcsImV4cCI6MTc3NzcyMTUyN30.fY6BEu_d0Vl7hf9yn7ikdqff12oUxgtuFMxwMeCvXqk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/kategori",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "kategori"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add kategori",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjA2MjcsImV4cCI6MTc3NzcyMTUyN30.fY6BEu_d0Vl7hf9yn7ikdqff12oUxgtuFMxwMeCvXqk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nama_kategori\": \"Novel\",\r\n    \"deskripsi\": \"Buku fiksi berupa novel\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/kategori",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "kategori"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update kategori",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjA2MjcsImV4cCI6MTc3NzcyMTUyN30.fY6BEu_d0Vl7hf9yn7ikdqff12oUxgtuFMxwMeCvXqk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nama_kategori\": \"Novel Fiksi\",\r\n    \"deskripsi\": \"Buku fiksi berupa novel\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/kategori/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "kategori",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete kategori by id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/kategori/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "kategori",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add penulis",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nama\": \"Andrea Hirata\",\r\n    \"biografi\": \"Penulis novel Laskar Pelangi\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/penulis",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "penulis"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all penulis",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/penulis",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "penulis"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add rak",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"kode_rak\": \"A1\",\r\n    \"lokasi\": \"Lantai 1 sebelah kiri\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/rak",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "rak"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all rak",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/rak",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "rak"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add buku",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"judul\": \"Test Buku\",\r\n    \"isbn\": \"978-000-0000-00-0\",\r\n    \"id_penulis\": 1,\r\n    \"id_kategori\": 1,\r\n    \"id_rak\": 1,\r\n    \"tahun_terbit\": 2026,\r\n    \"stok\": 5,\r\n    \"deskripsi\": \"Buku untuk testing\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/buku",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "buku"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all buku",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/buku",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "buku"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "buku by ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/buku/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "buku",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update buku",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"judul\": \"Laskar Pelangi\",\r\n    \"stok\": 15\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/buku/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "buku",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "hapus buku",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjE1ODYsImV4cCI6MTc3NzcyMjQ4Nn0.AsB3KYz4AzsTQymyfGWsg3-Ua_6GaIIkGe1hgHmIZZo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/buku/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "buku",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Book Service",
+      "item": [
+        {
+          "name": "add anggota",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjI2MjIsImV4cCI6MTc3NzcyMzUyMn0.KQkS7jL1VxHfJ2fU8FAmkPJjwzdZuwZypwSthxQT8jc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"user_id\": 1,\r\n    \"nama\": \"Citra Dewi\",\r\n    \"email\": \"citra@test.com\",\r\n    \"no_hp\": \"083456789012\",\r\n    \"alamat\": \"Bandung\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/anggota",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "anggota"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all anggota",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjI3MzksImV4cCI6MTc3NzcyMzYzOX0.nDGz6bXzqBVO60fLQw_Dvvf1ksqrsB3mdopQ139pU5Q",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/anggota",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "anggota"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add anggota by ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjI3MzksImV4cCI6MTc3NzcyMzYzOX0.nDGz6bXzqBVO60fLQw_Dvvf1ksqrsB3mdopQ139pU5Q",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/anggota/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "anggota",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update  anggota",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjI4NzYsImV4cCI6MTc3NzcyMzc3Nn0.uCPT2dwCbCn8-JvsPjd8GTUtgccGrovs5BUfu_pmseA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nama\": \"Citra Dewi Updated\",\r\n    \"no_hp\": \"083456789012\",\r\n    \"alamat\": \"Bandung Selatan\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/anggota/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "anggota",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete anggota",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjI4NzYsImV4cCI6MTc3NzcyMzc3Nn0.uCPT2dwCbCn8-JvsPjd8GTUtgccGrovs5BUfu_pmseA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/anggota/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "anggota",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add kartu anggota",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjI4NzYsImV4cCI6MTc3NzcyMzc3Nn0.uCPT2dwCbCn8-JvsPjd8GTUtgccGrovs5BUfu_pmseA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_anggota\": 1,\r\n    \"nomor_kartu\": \"KA-003\",\r\n    \"tanggal_berlaku\": \"2027-12-31\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/kartu-anggota",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "kartu-anggota"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all kartu anggota",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjI4NzYsImV4cCI6MTc3NzcyMzc3Nn0.uCPT2dwCbCn8-JvsPjd8GTUtgccGrovs5BUfu_pmseA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/kartu-anggota",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "kartu-anggota"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Loan Service",
+      "item": [
+        {
+          "name": "add peminjaman",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjMxNDUsImV4cCI6MTc3NzcyNDA0NX0.kFzW4UFEjZRYBPYdEypyPSdRvQQ90-x6Aw-bsZaS87I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_anggota\": 1,\r\n    \"id_buku\": 5,\r\n    \"tanggal_pinjam\": \"2026-05-02\",\r\n    \"tanggal_kembali_rencana\": \"2026-05-09\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/peminjaman",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "peminjaman"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update peminjaman",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjQxMDYsImV4cCI6MTc3NzcyNTAwNn0.y2xWS5CtXWcG7zlyhXuLEdU-7Q48nskISIXr90FbmNo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"dipinjam\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/peminjaman/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "peminjaman",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add pengembalian",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjQxMDYsImV4cCI6MTc3NzcyNTAwNn0.y2xWS5CtXWcG7zlyhXuLEdU-7Q48nskISIXr90FbmNo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_peminjaman\": 5,\r\n    \"tanggal_kembali\": \"2026-05-15\",\r\n    \"kondisi_buku\": \"baik\",\r\n    \"catatan\": \"buku dikembalikan terlambat\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/pengembalian",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "pengembalian"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all pengembalian",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjQxMDYsImV4cCI6MTc3NzcyNTAwNn0.y2xWS5CtXWcG7zlyhXuLEdU-7Q48nskISIXr90FbmNo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/pengembalian",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "pengembalian"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all denda",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjQxMDYsImV4cCI6MTc3NzcyNTAwNn0.y2xWS5CtXWcG7zlyhXuLEdU-7Q48nskISIXr90FbmNo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/denda",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "denda"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all peminjaman",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjMxNDUsImV4cCI6MTc3NzcyNDA0NX0.kFzW4UFEjZRYBPYdEypyPSdRvQQ90-x6Aw-bsZaS87I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/peminjaman",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "peminjaman"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update denda",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhaW5hQHRlc3QuY29tIiwicm9sZSI6ImFuZ2dvdGEiLCJpYXQiOjE3Nzc3MjQxMDYsImV4cCI6MTc3NzcyNTAwNn0.y2xWS5CtXWcG7zlyhXuLEdU-7Q48nskISIXr90FbmNo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"sudah_bayar\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/denda/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "denda",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
